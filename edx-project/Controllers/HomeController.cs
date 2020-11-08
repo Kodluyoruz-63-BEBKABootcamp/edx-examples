@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using edx_project.Models;
+using edx_project.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

@@ -1,6 +1,4 @@
-using System;
-
-namespace edx_project.Models
+namespace edx_project.Models.ViewModels
 {
     public class ErrorViewModel
     {

@@ -10,5 +10,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\IMDB\" />
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Models\DomainModels\" />
   </ItemGroup>
 </Project>

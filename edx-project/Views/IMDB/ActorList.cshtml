@@ -1,0 +1,15 @@
+﻿@model List<edx_project.Models.DomainModels.Actor>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    @foreach (var actor in Model)
+    {
+        <tr>
+            <td>@actor.Actor_ID</td>
+            <td>@($"{actor.First_Name} {actor.Last_Name}")</td>
+        </tr>
+    }
+</table>

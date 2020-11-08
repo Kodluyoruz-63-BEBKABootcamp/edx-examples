@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using edx_project.Models;
+using edx_project.Models.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace edx_project.Controllers
