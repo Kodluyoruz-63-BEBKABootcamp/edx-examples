@@ -1,4 +1,4 @@
-﻿namespace edx_project.Models
+﻿namespace edx_project.Models.DomainModels
 {
     public class Product
     {

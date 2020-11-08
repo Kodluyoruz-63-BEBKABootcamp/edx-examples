@@ -1,0 +1,15 @@
+﻿@model edx_project.Models.ViewModels.DirectorFilmsViewModel
+
+<h1>@Model.Director.Name</h1>
+
+<table border="1">
+    <tr>
+        <td>Film Name</td>
+    </tr>
+    @foreach (var film in Model.Films)
+    {
+        <tr>
+            <td>@film.Name</td>
+        </tr>
+    }
+</table>
