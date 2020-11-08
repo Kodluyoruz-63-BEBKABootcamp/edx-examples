@@ -39,17 +39,39 @@ namespace edx_project.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateActor()
+        public IActionResult CreateActor(string full_name)
         {
+            Create(full_name);
             return View();
         }
 
         [HttpPost]
         public IActionResult CreateActor(string first_name, string last_name)
         {
+            Create(first_name,last_name);
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateActor(Actor actor)
+        {
+            return View();
+        }
+
+        #region internal methods
+        
+        private void Create(string full)
+        {
+            string[] seperated = full.Split(" ");
+            Create(seperated[0], seperated[1]);
+        }
+
+        private void Create(string first,string last)
+        {
             Actor actor = new Actor();
-            actor.First_Name = first_name;
-            actor.Last_Name = last_name;
+            actor.First_Name = first;
+            actor.Last_Name = last;
             actor.Last_Update = DateTime.Now;
             int id = 4; //created by entity framework core.
             actor.Actor_ID = 4;
@@ -62,14 +84,7 @@ namespace edx_project.Controllers
             {
                 ViewBag.success = "Actor could not be created.";
             }
-
-            return View();
         }
-
-        [HttpPost]
-        public IActionResult CreateActor(Actor actor)
-        {
-            return View();
-        }
+        #endregion
     }
 }
