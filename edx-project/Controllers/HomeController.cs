@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using edx_project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using edx_project.Models;
 
 namespace edx_project.Controllers
 {
@@ -26,6 +23,19 @@ namespace edx_project.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult ViewWithoutModel()
+        {
+            ViewBag.MyProperty = "My Property";
+            int number = (new Random()).Next();
+            return View(5); //View(number);
+        }
+
+        public IActionResult Age()
+        {
+            AgeViewModel model = new AgeViewModel();
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

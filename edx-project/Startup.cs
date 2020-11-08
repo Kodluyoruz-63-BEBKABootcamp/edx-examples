@@ -50,7 +50,7 @@ namespace edx_project
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Product}/{action=ShowAll}/{id?}");
             });
         }
     }
