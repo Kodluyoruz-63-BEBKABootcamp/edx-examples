@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using edx_project.Models.DomainModels;
+using edx_project.Models.DTO;
 using edx_project.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -59,8 +60,62 @@ namespace edx_project.Controllers
             return View();
         }
 
+        //[HttpGet]
+        //public IActionResult CreateFilm()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public IActionResult CreateFilm(CreateOrUpdateDTO model)
+        //{
+        //    if (model.Operation == Operation.Create)
+        //    {
+        //        // create a new film (filmService.create(....)
+        //    }
+        //    else if (model.Operation == Operation.Update)
+        //    {
+        //        // update the existing film by ID
+        //    }
+        //    else
+        //    {
+        //        // ...
+        //    }
+        //    return View(model);
+        //}
+
+        [HttpGet]
+        public IActionResult UpdateFilm(int ID)
+        {
+            Film film = new Film { Name = "Transformers" }; //from db
+            CreateOrUpdateDTO dTO = new CreateOrUpdateDTO();
+            dTO.Name = film.Name;
+
+            return View(dTO);
+        }
+
+        [HttpGet]
+        public IActionResult CreateFilm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateFilm(CreateOrUpdateDTO model)
+        {
+            if (model.ID == 0)
+            {
+                // create a new film (filmService.create(....)
+            }
+            else
+            {
+                // update the existing film by ID
+            }
+            return View(model);
+        }
+
         #region internal methods
-        
+
         private void Create(string full)
         {
             string[] seperated = full.Split(" ");
