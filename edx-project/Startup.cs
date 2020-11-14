@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +20,7 @@ namespace edx_project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddControllersWithViews(configuration => configuration.EnableEndpointRouting=false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,11 +43,35 @@ namespace edx_project
 
             app.UseAuthorization();
 
+            //app.UseMvcWithDefaultRoute();
+
+            //app.UseMvc(routes => {
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //    routes.MapRoute(
+            //        name: "productSearch",
+            //        template: "search/{kw?}",
+            //        defaults: new { controller = "Product", action = "Search" });
+            //    routes.MapRoute(
+            //        name: "docSearch",
+            //        template: "help/{kw?}",
+            //        defaults: new { controller = "Help", action = "FullTextSearch" });
+            //});
+
+            //conventional routing
             app.UseEndpoints(endpoints =>
             {
+                endpoints.Map(
+                    pattern: "homepage",
+                    requestDelegate: context =>
+                    {
+                        context.Response.Redirect("/home/index");
+                        return Task.CompletedTask;
+                    });
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Product}/{action=ShowAll}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id=0}/{name:alpha?}");
             });
         }
     }

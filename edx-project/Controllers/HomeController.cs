@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace edx_project.Controllers
 {
+    //[Route("main")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -15,8 +16,12 @@ namespace edx_project.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        //[Route("index")]
+        public IActionResult Index(int id, string name, int age)
         {
+            ViewBag.age = age;
+            ViewBag.ID = id;
+            ViewBag.name = name;
             return View();
         }
 
@@ -36,6 +41,18 @@ namespace edx_project.Controllers
         {
             AgeViewModel model = new AgeViewModel();
             return View(model);
+        }
+
+        public IActionResult AgeRestriction(int age)
+        {
+            if (age >= 18)
+            {
+                return RedirectToAction("above18");
+            }
+            else
+            {
+                return RedirectToAction("under18");
+            }
         }
 
         public IActionResult JsonExample(double r, double h)
