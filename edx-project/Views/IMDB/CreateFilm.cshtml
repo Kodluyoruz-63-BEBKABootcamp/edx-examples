@@ -1,0 +1,21 @@
+﻿<form action="createfilm" method="POST">
+    <span>ID</span>
+    <input type="text" name="id" value="101" /><br />
+    <span>Name</span>
+    <input type="text" name="name" value="Transformer" /><br />
+    <span>Year</span>
+    <select name="year">
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+    </select><br />
+    <span>Genre</span>
+    <input type="checkbox" name="genres" value="action" /><span>Action</span>
+    <input type="checkbox" name="genres" value="comedy" /><span>Comedy</span>
+    <input type="checkbox" name="genres" value="war" /><span>War</span><br />
+    <span>In Store</span>
+    <input type="radio" name="isinstore" value="true" /><span>Yes</span>
+    <input type="radio" name="isinstore" value="false" /><span>No</span><br />
+    <input type="submit" name="operation" value="Create" />
+    <input type="submit" name="operation" value="Update" />
+</form>

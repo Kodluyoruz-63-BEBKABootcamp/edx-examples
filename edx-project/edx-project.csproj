@@ -13,5 +13,6 @@
     <Folder Include="Views\IMDB\" />
     <Folder Include="Models\ViewModels\" />
     <Folder Include="Models\DomainModels\" />
+    <Folder Include="Models\DTO\" />
   </ItemGroup>
 </Project>
