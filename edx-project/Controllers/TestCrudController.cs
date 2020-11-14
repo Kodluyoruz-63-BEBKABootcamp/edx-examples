@@ -41,7 +41,7 @@ namespace edx_project.Controllers
         }
 
         // GET: TestCrud/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit([FromRoute] int id)
         {
             return View();
         }
