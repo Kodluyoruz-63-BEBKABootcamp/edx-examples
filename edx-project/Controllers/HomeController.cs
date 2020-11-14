@@ -38,6 +38,12 @@ namespace edx_project.Controllers
             return View(model);
         }
 
+        public IActionResult JsonExample(double r, double h)
+        {
+            double v = Math.PI * Math.Pow(r, 2) * h;
+            return new JsonResult(v);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
