@@ -1,8 +1,54 @@
-﻿@{
-    ViewData["Title"] = "IMDB Page";
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Book Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Book</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@Html.Initialize("Welcome to Book Page")
+
+@Html.ActionLink("Homepage", "Index", "Home")
+
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="Index">Homepage</a>
 </div>
+<br />
+<br />
+@using (Html.BeginForm())
+{
+    @Html.DisplayNameFor(b => b.ISBN)
+    <br />
+    @Html.TextBoxFor(b => b.ISBN, Model.ISBN)
+    <br />
+    @Html.DisplayNameFor(b => b.Title)
+    <br />
+    @Html.TextBoxFor(b => b.Title, Model.Title)
+    <br />
+    @Html.DisplayNameFor(b => b.PublishDate)
+    <br />
+    @Html.TextBoxFor(b => b.PublishDate, Model.PublishDate)
+    <br />
+    @Html.DisplayNameFor(b => b.Description)
+    <br />
+    @Html.TextBoxFor(b => b.Description, Model.Description)
+    <br />
+    @Html.DisplayNameFor(b => b.Price)
+    <br />
+    @Html.TextBoxFor(b => b.Price, Model.Price)
+    <br />
+    @Html.DisplayNameFor(b => b.SamplePage)
+    <br />
+    @Html.TextBoxFor(b => b.SamplePage, Model.SamplePage)
+    <br />
+    @Html.DisplayNameFor(b => b.AuthorEmail)
+    <br />
+    @Html.TextBoxFor(b => b.AuthorEmail, Model.AuthorEmail)
+    <br />
+    @Html.DisplayNameFor(b => b.AuthorPhone)
+    <br />
+    @Html.TextBoxFor(b => b.AuthorPhone, Model.AuthorPhone)
+    <br />
+    <input type="submit" value="Submit" />
+    <br />
+
+    //@Html.DisplayForModel()
+}

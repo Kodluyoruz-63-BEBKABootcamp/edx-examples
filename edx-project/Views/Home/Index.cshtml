@@ -1,8 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var id = ViewBag.ID;
+    var name = ViewBag.name;
+    var age = ViewBag.age;
 }
 
-<div class="text-center">
+@*<div class="text-center">
     <h1 class="display-4">Welcome @ViewBag.ID - @ViewBag.name - @ViewBag.age</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+@Html.Initialize("Welcome 5 - Hakki - 18", 5)
+
+<div class="text-center">
+    @Html.ColorfulHeading(1,"green","Bebka MVC Bootcamp")
+    @Html.ColorfulHeading(2,"darkblue","Sub category")
 </div>
