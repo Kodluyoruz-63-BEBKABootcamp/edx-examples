@@ -15,5 +15,6 @@
     <Folder Include="Models\DomainModels\" />
     <Folder Include="Models\DTO\" />
     <Folder Include="Models\ModelBinding\" />
+    <Folder Include="Views\Book\" />
   </ItemGroup>
 </Project>
