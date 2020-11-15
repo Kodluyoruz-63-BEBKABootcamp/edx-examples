@@ -6,11 +6,6 @@ namespace edx_project.Controllers
 {
     public class GameController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult Create([ModelBinder(BinderType = typeof(GameModelBinder))] Game game)
         {
             return new JsonResult(game);
