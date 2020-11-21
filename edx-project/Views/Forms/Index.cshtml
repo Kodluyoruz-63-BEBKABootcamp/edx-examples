@@ -1,5 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Forms Home";
 }
+@model int
 
 @Html.Initialize("Forms Links")
+@await Html.PartialAsync("_TestPartialView",Model)
+@*<partial name="_TestPartialView" />*@ 
