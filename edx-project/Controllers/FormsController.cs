@@ -10,7 +10,12 @@ namespace edx_project.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(new Random().Next(10));
+        }
+
+        public IActionResult TestPartialView()
+        {
+            return PartialView("_TestPartialView", 5);
         }
 
         public IActionResult Blog()

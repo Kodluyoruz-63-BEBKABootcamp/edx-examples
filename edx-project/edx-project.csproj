@@ -22,5 +22,6 @@
     <Folder Include="Views\Book\" />
     <Folder Include="Extensions\" />
     <Folder Include="Views\Forms\" />
+    <Folder Include="Views\Shared\Blog\" />
   </ItemGroup>
 </Project>
