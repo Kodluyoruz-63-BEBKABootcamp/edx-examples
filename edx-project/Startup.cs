@@ -69,9 +69,33 @@ namespace edx_project
                         context.Response.Redirect("/home/index");
                         return Task.CompletedTask;
                     });
+                endpoints.Map(
+                    pattern: "adminpage",
+                    requestDelegate: context =>
+                    {
+                        context.Response.Redirect("/admin/home/index");
+                        return Task.CompletedTask;
+                    });
+                endpoints.Map(
+                    pattern: "editorpage",
+                    requestDelegate: context =>
+                    {
+                        context.Response.Redirect("/editor/home/index");
+                        return Task.CompletedTask;
+                    });
+                endpoints.Map(
+                    pattern: "test",
+                    requestDelegate: context =>
+                    {
+                        context.Response.Redirect("/forms/TestPartialView");
+                        return Task.CompletedTask;
+                    });
+                endpoints.MapControllerRoute(
+                    name: "Admin",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Forms}/{action=Blog}/{id=0}/{name:alpha?}");
+                    pattern: "{controller=Home}/{action=Index}/{id=0}/{name:alpha?}");
             });
         }
     }
