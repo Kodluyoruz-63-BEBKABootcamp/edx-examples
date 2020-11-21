@@ -21,5 +21,6 @@
     <Folder Include="Models\ModelBinding\" />
     <Folder Include="Views\Book\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Views\Forms\" />
   </ItemGroup>
 </Project>

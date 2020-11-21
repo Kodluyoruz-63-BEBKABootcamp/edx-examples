@@ -71,7 +71,7 @@ namespace edx_project
                     });
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Book}/{action=Index}/{id=0}/{name:alpha?}");
+                    pattern: "{controller=Forms}/{action=Blog}/{id=0}/{name:alpha?}");
             });
         }
     }
